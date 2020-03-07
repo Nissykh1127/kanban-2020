@@ -85,7 +85,6 @@ import dj_database_url
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -134,10 +133,10 @@ LOGIN_REDIRECT_URL = "kanban:home"
 LOGOUT_REDIRECT_URL = "kanban:index"
 LOGIN_URL = "login"
 
-DEBUG = True
+DEBUG = False
 
 try:
-    from config.local_settings import *
+    from .local_settings import *
 except ImportError:
     pass
 
