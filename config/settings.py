@@ -25,7 +25,7 @@ SECRET_KEY = 'hcwwi8%0n!g*g=k#^y-sw*w%coe5u3zm-2q_l6f=9^pjuodj7^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["kanban-kyo.herokuapp.com"]
+ALLOWED_HOSTS = ["kanban-2020.herokuapp.com"]
 
 
 # Application definition
@@ -80,6 +80,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
 import dj_database_url
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
