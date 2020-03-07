@@ -82,9 +82,9 @@ DATABASES = {
 }
 
 
-import dj_database_url
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
+# import dj_database_url
+# db_from_env = dj_database_url.config()
+# DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -135,13 +135,13 @@ LOGIN_REDIRECT_URL = "kanban:home"
 LOGOUT_REDIRECT_URL = "kanban:index"
 LOGIN_URL = "login"
 
-DEBUG = False
+# DEBUG = False
 
-try:
-    from config.local_settings import *
-except ImportError:
-    pass
+# try:
+#     from config.local_settings import *
+# except ImportError:
+#     pass
 
-if not DEBUG:
-    import django_heroku
-    django_heroku.settings(locals())
+# if not DEBUG:
+#     import django_heroku
+#     django_heroku.settings(locals())
