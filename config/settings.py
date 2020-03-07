@@ -73,19 +73,17 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django_boards',
-        'USER': 'u_boards',
-        'PASSWORD' : 'newpassword',
-        'HOST' : 'localhost',
-        'PORT' : 5432,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-# import dj_database_url
-# db_from_env = dj_database_url.config()
-# DATABASES['default'].update(db_from_env)
+
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -136,13 +134,13 @@ LOGIN_REDIRECT_URL = "kanban:home"
 LOGOUT_REDIRECT_URL = "kanban:index"
 LOGIN_URL = "login"
 
-DEBUG = False
+DEBUG = True
 
-# try:
-#     from config.local_settings import *
-# except ImportError:
-#     pass
+try:
+    from config.local_settings import *
+except ImportError:
+    pass
 
-# if not DEBUG:
-#     import django_heroku
-#     django_heroku.settings(locals())
+if not DEBUG:
+    import django_heroku
+    django_heroku.settings(locals())
