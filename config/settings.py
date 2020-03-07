@@ -25,7 +25,7 @@ SECRET_KEY = 'hcwwi8%0n!g*g=k#^y-sw*w%coe5u3zm-2q_l6f=9^pjuodj7^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["kanban-2020.herokuapp.com"]
+ALLOWED_HOSTS = ["kanban-kyo.herokuapp.com"]
 
 
 # Application definition
