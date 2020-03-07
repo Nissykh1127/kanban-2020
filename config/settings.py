@@ -133,7 +133,7 @@ LOGIN_REDIRECT_URL = "kanban:home"
 LOGOUT_REDIRECT_URL = "kanban:index"
 LOGIN_URL = "login"
 
-DEBUG = True
+DEBUG = False
 
 try:
     from .local_settings import *
