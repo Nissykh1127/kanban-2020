@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import dj_database_url
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -26,7 +25,7 @@ SECRET_KEY = 'hcwwi8%0n!g*g=k#^y-sw*w%coe5u3zm-2q_l6f=9^pjuodj7^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["kanban-2020",".herokuapp.com"]
+ALLOWED_HOSTS = ["kanban-2020.herokuapp.com"]
 
 
 # Application definition
@@ -135,14 +134,11 @@ LOGIN_URL = "login"
 
 DEBUG = False
 
-try:
-    from .local_settings import *
-except ImportError:
-    pass
+# try:
+#     from config.local_settings import *
+# except ImportError:
+#     pass
 
-if not DEBUG:
-    import django_heroku
-    django_heroku.settings(locals())
-
-db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
-DATABASES['default'].update(db_from_env)
+# if not DEBUG:
+#     import django_heroku
+#     django_heroku.settings(locals())
