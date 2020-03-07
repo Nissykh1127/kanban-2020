@@ -25,7 +25,7 @@ SECRET_KEY = 'hcwwi8%0n!g*g=k#^y-sw*w%coe5u3zm-2q_l6f=9^pjuodj7^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["kanban-1127.herokuapp.com"]
+ALLOWED_HOSTS = ["kanban-kh1127.herokuapp.com"]
 
 
 # Application definition
@@ -80,9 +80,12 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
 import dj_database_url
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
+
+...
 
 
 # Password validation
@@ -120,13 +123,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # 追記
 STATIC_URL = '/static/'
 
+# 追記
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-...
 
 # ログイン後のリダイレクト先
 LOGIN_REDIRECT_URL = "kanban:home"
