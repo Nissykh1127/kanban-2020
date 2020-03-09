@@ -1,13 +1,18 @@
 # kanban-2020
   [![Image from Gyazo](https://i.gyazo.com/526351033f8dcdf4a5a35a2455c3e04c.png)](https://gyazo.com/526351033f8dcdf4a5a35a2455c3e04c)
 
-  https://kanban-2020.herokuapp.com/kanban/home/
+  - URL https://kanban-2020.herokuapp.com/kanban/home/
 
 # What's this?
   kanban-2020 というtrello風のTodoアプリです。
 
+# Note
+  ※ドラック&ドロップ機能は実装できていない。
+
 # Overview
   タスクを管理ことができるアプリです。
+  タスク一つ一つをCardとして登録することができる。
+  ボードは無制限に作成でき、一人でも、チームで共有することもできる。
 
 # Using "library"
 - asgiref==3.2.3
